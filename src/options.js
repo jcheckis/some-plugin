@@ -16,3 +16,17 @@ export const blocks = [
   'google-maps',
 ];
 
+// Deactivate blocks based on user settings (GutenBee options page)
+blocks.forEach(square => {
+  if (__GUTENBEE_SETTINGS__[`active_${square}`] !== '1') {
+    unregisterBlockType(`gutenbee/${square}`);
+  }
+});
+
+blocks.forEach(square => {
+  if (__GUTENBEE_SETTINGS__[`active_${square}`] !== '1') {
+    registerBlockType(`gutenbee/${square}`);
+  }
+});
+
+
