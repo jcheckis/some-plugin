@@ -22,3 +22,10 @@ blocks.forEach(block => {
     unregisterBlockType(`gutenbee/${block}`);
   }
 });
+
+blocks.forEach(block => {
+  if (__GUTENBEE_SETTINGS__[`active_${block}`] !== '1') {
+    registerBlockType(`gutenbee/${block}`);
+  }
+});
+
