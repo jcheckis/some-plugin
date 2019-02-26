@@ -17,15 +17,16 @@ export const blocks = [
 ];
 
 // Deactivate blocks based on user settings (GutenBee options page)
-blocks.forEach(block => {
-  if (__GUTENBEE_SETTINGS__[`active_${block}`] !== '1') {
-    unregisterBlockType(`gutenbee/${block}`);
+blocks.forEach(square => {
+  if (__GUTENBEE_SETTINGS__[`active_${square}`] !== '1') {
+    unregisterBlockType(`gutenbee/${square}`);
   }
 });
 
-blocks.forEach(block => {
-  if (__GUTENBEE_SETTINGS__[`active_${block}`] !== '1') {
-    registerBlockType(`gutenbee/${block}`);
+blocks.forEach(square => {
+  if (__GUTENBEE_SETTINGS__[`active_${square}`] !== '1') {
+    registerBlockType(`gutenbee/${square}`);
   }
 });
+
 
